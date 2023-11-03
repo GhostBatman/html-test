@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script src="index.js" lang="js"></script>
+
+<div class="container container_header">
+    <div id="form"></div>
+    <button onclick="showForm()">Create</button>
+</div>
+
+
+<div class="container container_items" id="items"></div>
+
+
+<template id="formTemplate">
+    <form onsubmit="return setItem(event)">
+        <input readonly type="text" name="id" value="" placeholder="id" />
+        <input type="number" name="value" value="0" placeholder="value" />
+        <button type="submit">Set</button>
+    </form>
+</template>
+
+<template id="itemTemplate">
+    <div class="item">
+        <label>
+            value: <input readonly type="text" name="value" value="" />
+        </label>
+        <button data-type="add" onclick="updateItem(event)">Add</button>
+        <button data-type="remove" onclick="removeItem(event)">Remove</button>
+    </div>
+</template>
+</body>
+</html>
